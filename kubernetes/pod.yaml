@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: store-engine-persistence-ms-pod
+  labels:
+    app: store-engine-persistence-ms
+spec:
+  containers:
+  - name: store-engine-persistence-ms-container
+    image: store-engine-persistence-ms:latest
+    imagePullPolicy: IfNotPresent
+    ports:
+    - containerPort: 2999
+    env:
+    - name: NODE_ENV
+      value: "production"
+    - name: DB_HOST
+      value: "host.docker.internal"
+    - name: DB_PORT
+      value: "5432"
+    - name: DB_USERNAME
+      value: "postgres"
+    - name: DB_PASSWORD
+      value: "1234"
+    - name: DB_NAME
+      value: "sale-management-system"
+    
