@@ -44,6 +44,7 @@ export class EngineService {
             idProcess: process,
             idTransactionType: transactionType
         };
+        this.logger.debug(workflow);
         this.workflowRepository.save(workflow);
     }
 

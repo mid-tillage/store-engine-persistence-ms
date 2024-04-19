@@ -1,12 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: store-engine-persistence-ms-service
+  name: store-engine-persistence-service
 spec:
   selector:
     app: store-engine-persistence-ms
   ports:
-    - protocol: TCP
-      port: 80
+    - port: 2999
       targetPort: 2999
   type: NodePort
